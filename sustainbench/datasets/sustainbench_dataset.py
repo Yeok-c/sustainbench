@@ -359,7 +359,7 @@ class SustainBenchDataset:
             print(f'You can also download the dataset manually at https://drive.google.com/drive/folders/1jyjK5sKGYegfHDjuVBSxCoj49TD830wL.')
             try:
                 output_name = os.path.join("data", "archive.zip")
-                gdown.download(download_url, output_name, quiet=True, use_cookies=False)
+                gdown.download(download_url, output_name, quiet=False, use_cookies=True)
                 extract_archive(output_name, "data", remove_finished=False)
                 print("Data downloaded at {}".format(data_dir))
             except Exception as e:
@@ -372,9 +372,9 @@ class SustainBenchDataset:
             #for google_drive_dict in download_url:
             #    url = google_drive_dict['url']
             #    compressed_size = google_drive_dict['size']
-            #    gdown.download_folder(url, quiet=True, use_cookies=False)
+            #    gdown.download_folder(url, quiet=False, use_cookies=True)
             try:
-                gdown.download_folder(download_url, quiet=True, use_cookies=False)
+                gdown.download_folder(download_url, quiet=False, use_cookies=True, resume=True)
             except Exception as e:
                 print(f"\n{os.path.join(data_dir, 'archive.tar.gz')} may be corrupted. Please try deleting it and rerunning this command.\n")
                 print(f"Exception: ", e)
@@ -382,7 +382,7 @@ class SustainBenchDataset:
         elif self.dataset_name == 'brick_kiln':
             print(f'Downloading from Google Drive...')
             try:
-                gdown.download_folder(download_url, quiet=True, use_cookies=False)
+                gdown.download_folder(download_url, quiet=False, use_cookies=True)
                 extract_archive('brick_kiln/brick_kiln_v1.0.tar.gz', root_dir, remove_finished=True)
                 print(f"Data downloaded at data/brick_kiln_v1.0")
             except Exception as e:
@@ -396,9 +396,9 @@ class SustainBenchDataset:
             #for google_drive_dict in download_url:
             #    url = google_drive_dict['url']
             #    compressed_size = google_drive_dict['size']
-            #    gdown.download_folder(url, quiet=True, use_cookies=False)
+            #    gdown.download_folder(url, quiet=False, use_cookies=True)
             try:
-                gdown.download_folder(download_url, quiet=True, use_cookies=False)
+                gdown.download_folder(download_url, quiet=False, use_cookies=True, resume=True)
             except Exception as e:
                 print(f"\n{os.path.join(data_dir, 'archive.tar.gz')} may be corrupted. Please try deleting it and rerunning this command.\n")
                 print(f"Exception: ", e)

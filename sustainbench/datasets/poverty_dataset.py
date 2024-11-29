@@ -11,6 +11,8 @@ from sustainbench.common.metrics.all_metrics import MSE, PearsonCorrelation
 from sustainbench.common.grouper import CombinatorialGrouper
 from sustainbench.common.utils import subsample_idxs, shuffle_arr
 
+from sustainbench.datasets.dataset_constants import *
+
 DATASET = '2009-17'
 BAND_ORDER = ['BLUE', 'GREEN', 'RED', 'SWIR1', 'SWIR2', 'TEMP1', 'NIR', 'NIGHTLIGHTS']
 
@@ -168,6 +170,7 @@ class PovertyMapDataset(SustainBenchDataset):
             raise ValueError("Fold must be A, B, C, D, or E")
 
         self.root = Path(self._data_dir)
+        print("Package root is at self.root: ", self.root)
         self.metadata = pd.read_csv(self.root / 'dhs_metadata.csv')
         # country folds, split off OOD
         country_folds = SURVEY_NAMES[f'2009-17{fold}']

@@ -216,6 +216,4 @@ clean_data/*
 
 dataset
 dhs
-baseline_models/datasets/experimental_results
-baseline_models/dhs
 baseline_models/datasets

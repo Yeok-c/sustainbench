@@ -1,0 +1,12 @@
+pandas
+matplotlib
+timm
+cartopy
+tqdm
+scikit-learn
+fvcore
+omegaconf
+wandb
+# run torch install manually based on instructions on 
+# https://pytorch.org/get-started/locally/
+# Also pip install torchmetrics  afterwards

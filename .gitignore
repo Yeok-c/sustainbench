@@ -215,5 +215,7 @@ hanBurakData/*
 clean_data/*
 
 dataset
+datasets
 dhs
 baseline_models/datasets
+**/wandb
